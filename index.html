@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Planner Santa Data — Planeje seu casamento com amor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#F5F1EB;--taupe:#D2C4B5;--warm:#FAF9F7;--blush:#EBD5D0;
+  --rose:#C8A7A1;--coral:#D6A49A;--olive:#A6A69D;--stone:#BFBAB2;
+  --denim:#A3B1C6;--dark:#2C2420;--mid:#6B5F58;--soft:#9E948D;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--warm);color:var(--dark);overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,249,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(210,196,181,.2);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark);text-decoration:none;}
+.nav-logo em{font-style:italic;color:var(--coral);}
+.nav-cta{background:linear-gradient(135deg,#C8A7A1,#D6A49A);color:white;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:12px 28px;border-radius:40px;text-decoration:none;}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(160deg,#F5F1EB 0%,#EBD5D0 40%,#D2C4B5 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:80px;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(198,167,161,.3) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(163,177,198,.2) 0%,transparent 50%);}
+.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.hero-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--coral);background:rgba(214,164,154,.15);padding:8px 20px;border-radius:40px;margin-bottom:24px;border:1px solid rgba(214,164,154,.3);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,58px);line-height:1.15;margin-bottom:24px;}
+.hero h1 em{font-style:italic;color:var(--coral);}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--mid);line-height:1.7;margin-bottom:36px;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#C8A7A1,#D6A49A);color:white;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 8px 30px rgba(200,167,161,.4);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(200,167,161,.5);}
+.hero-price{display:inline-flex;flex-direction:column;align-items:flex-start;background:white;border-radius:16px;padding:20px 28px;box-shadow:0 8px 40px rgba(0,0,0,.08);margin-top:28px;}
+.hero-price .from{font-size:11px;color:var(--soft);letter-spacing:2px;text-transform:uppercase;text-decoration:line-through;}
+.hero-price .price{font-family:'Playfair Display',serif;font-size:40px;color:var(--coral);font-weight:700;line-height:1;}
+.hero-price .period{font-size:12px;color:var(--soft);margin-top:4px;}
+.hero-mockup{position:relative;overflow:visible;}
+.mockup-frame{background:white;border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.12);overflow:hidden;transform:rotate(-2deg);transition:transform .3s;}
+.mockup-frame:hover{transform:rotate(0);}
+.mockup-top{background:linear-gradient(135deg,#F5F1EB,#EBD5D0);padding:18px 22px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(210,196,181,.4);}
+.mockup-dots{display:flex;gap:5px;}
+.mockup-dots span{width:9px;height:9px;border-radius:50%;background:var(--taupe);}
+.mockup-ttl{font-family:'Playfair Display',serif;font-size:13px;color:var(--coral);font-style:italic;}
+.mockup-body{padding:18px;}
+.mstat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.mstat{background:var(--cream);border-radius:10px;padding:10px;text-align:center;}
+.mstat-v{font-family:'Playfair Display',serif;font-size:18px;color:var(--coral);font-weight:600;}
+.mstat-l{font-size:8px;color:var(--soft);letter-spacing:1px;text-transform:uppercase;}
+.mrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(210,196,181,.25);}
+.mrow:last-child{border:none;}
+.mdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.mtxt{font-size:11px;color:var(--mid);flex:1;}
+.mbadge{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:500;}
+.bg-green{background:#E8F5E9;color:#2E7D32;}
+.bg-yellow{background:#FFF8E1;color:#F57F17;}
+.float-badge{position:absolute;background:white;border-radius:14px;padding:14px 20px;box-shadow:0 12px 40px rgba(0,0,0,.16);display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--dark);border:1px solid rgba(214,164,154,.3);z-index:10;}
+.fb1{top:-22px;right:-32px;animation:float 3s ease-in-out infinite;}
+.fb2{bottom:24px;left:-44px;animation:float 3s ease-in-out infinite 1.5s;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* PROOF */
+.proof-bar{background:var(--dark);padding:18px 40px;display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap;}
+.proof-item{display:flex;align-items:center;gap:8px;color:var(--taupe);font-size:13px;}
+.proof-item strong{color:white;}
+.proof-div{width:1px;height:18px;background:rgba(210,196,181,.25);}
+
+/* SECTIONS */
+section{padding:100px 40px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-tag{font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--coral);margin-bottom:16px;display:block;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,46px);line-height:1.2;color:var(--dark);margin-bottom:20px;}
+.section-title em{font-style:italic;color:var(--coral);}
+.section-sub{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--mid);line-height:1.7;max-width:600px;}
+
+/* PROBLEM */
+.problem{background:var(--cream);position:relative;overflow:hidden;}
+.problem::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--coral),var(--denim),var(--olive));}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.problem-text h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);line-height:1.2;margin-bottom:20px;}
+.problem-text h2 em{font-style:italic;color:var(--coral);}
+.problem-text p{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--mid);line-height:1.8;margin-bottom:18px;}
+.problem-list{list-style:none;margin-top:28px;}
+.problem-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(210,196,181,.4);font-size:14px;color:var(--mid);line-height:1.6;}
+.problem-list li:last-child{border:none;}
+.problem-list li::before{content:'×';color:var(--coral);font-size:18px;flex-shrink:0;}
+.problem-quote{background:white;border-radius:20px;padding:36px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.06);}
+.problem-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:110px;color:var(--blush);line-height:1;position:absolute;top:-16px;left:18px;opacity:.5;}
+.problem-quote p{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;color:var(--dark);line-height:1.7;position:relative;z-index:1;}
+.pq-author{display:flex;align-items:center;gap:12px;margin-top:22px;}
+.pq-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--taupe));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;color:var(--coral);}
+.pq-name{font-size:14px;font-weight:600;color:var(--dark);}
+.pq-detail{font-size:11px;color:var(--soft);}
+
+/* TOOL EXPLORER */
+.tools-section{background:var(--warm);padding:100px 40px;}
+.tools-header{text-align:center;margin-bottom:60px;}
+.tool-explorer{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  background:white;
+  border-radius:24px;
+  box-shadow:0 20px 70px rgba(0,0,0,.09);
+  overflow:hidden;
+  min-height:500px;
+}
+.tool-list{
+  background:var(--cream);
+  border-right:1px solid rgba(210,196,181,.4);
+  padding:12px;
+  overflow-y:auto;
+  max-height:500px;
+}
+.tool-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:10px;cursor:pointer;transition:all .2s;border:1px solid transparent;}
+.tool-item:hover{background:rgba(214,164,154,.1);}
+.tool-item.active{background:white;border-color:rgba(214,164,154,.4);box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.tool-icon{font-size:20px;flex-shrink:0;width:30px;text-align:center;}
+.tool-name{font-size:12px;font-weight:600;color:var(--dark);line-height:1.2;}
+.tool-sub{font-size:10px;color:var(--soft);margin-top:1px;}
+.tool-arrow{margin-left:auto;color:var(--coral);font-size:13px;opacity:0;}
+.tool-item.active .tool-arrow{opacity:1;}
+.panels-container{overflow:hidden;}
+.tool-panel{display:none;padding:36px;animation:fadeIn .3s ease;}
+.tool-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateX(8px);}to{opacity:1;transform:translateX(0);}}
+.panel-header{display:flex;align-items:center;gap:16px;margin-bottom:14px;}
+.panel-icon{font-size:32px;}
+.panel-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--dark);}
+.panel-sub{font-size:11px;color:var(--soft);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.panel-desc{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
+.pmk{background:var(--cream);border-radius:14px;padding:18px;}
+.pmk-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.pmk-stat{background:white;border-radius:10px;padding:10px;text-align:center;}
+.pmk-sv{font-family:'Playfair Display',serif;font-size:17px;color:var(--coral);font-weight:600;}
+.pmk-sl{font-size:8px;color:var(--soft);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+.pmk-bar{height:5px;background:rgba(210,196,181,.4);border-radius:3px;margin-bottom:14px;overflow:hidden;}
+.pmk-bar-fill{height:100%;background:linear-gradient(90deg,var(--coral),var(--rose));border-radius:3px;}
+.pmk-rows{}
+.pmk-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(210,196,181,.3);font-size:12px;}
+.pmk-row:last-child{border:none;}
+.pmk-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.pmk-txt{flex:1;color:var(--mid);}
+.pmk-badge{font-size:9px;padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap;}
+.badge-g{background:#E8F5E9;color:#2E7D32;}
+.badge-y{background:#FFF8E1;color:#F57F17;}
+.badge-r{background:#FEE2E2;color:#991B1B;}
+.badge-b{background:#E0F2FE;color:#075985;}
+
+/* URGENCY */
+.urgency-section{background:linear-gradient(135deg,#2C2420 0%,#3D2E28 100%);padding:80px 40px;position:relative;overflow:hidden;}
+.urgency-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(214,164,154,.12) 0%,transparent 60%);}
+.urgency-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;text-align:center;}
+.urgency-tag{display:inline-block;background:rgba(214,164,154,.2);border:1px solid rgba(214,164,154,.4);color:var(--coral);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:40px;margin-bottom:24px;}
+.urgency-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);color:white;line-height:1.2;margin-bottom:12px;}
+.urgency-sub{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--taupe);line-height:1.6;margin-bottom:8px;}
+.urgency-disclaimer{font-size:12px;color:var(--soft);margin-bottom:36px;}
+.countdown-big{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:48px;}
+.cb-unit{text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px 24px;min-width:90px;}
+.cb-val{font-family:'Playfair Display',serif;font-size:52px;color:white;font-weight:700;line-height:1;}
+.cb-lbl{font-size:10px;color:var(--soft);letter-spacing:3px;text-transform:uppercase;margin-top:6px;}
+.cb-sep{font-size:40px;color:rgba(255,255,255,.2);padding-bottom:20px;}
+.bonus-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:40px;}
+.bonus-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 12px;text-align:center;}
+.bonus-icon{font-size:28px;margin-bottom:10px;}
+.bonus-name{font-family:'Playfair Display',serif;font-size:13px;color:white;margin-bottom:6px;}
+.bonus-desc{font-size:11px;color:var(--soft);line-height:1.5;}
+.bonus-value{display:inline-block;background:rgba(214,164,154,.2);color:var(--coral);font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;margin-top:8px;}
+
+/* MOST COMPLETE */
+.complete-section{background:linear-gradient(160deg,#2C2420 0%,#3D2E28 60%,#4A3530 100%);padding:110px 40px;position:relative;overflow:hidden;}
+.complete-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(214,164,154,.1) 0%,transparent 60%);}
+.complete-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center;}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--cream);}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.test-card{background:white;border-radius:20px;padding:34px;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:transform .3s;}
+.test-card:hover{transform:translateY(-4px);}
+.stars{color:var(--coral);font-size:17px;margin-bottom:14px;letter-spacing:2px;}
+.test-card p{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:var(--dark);line-height:1.7;margin-bottom:22px;}
+.test-author{display:flex;align-items:center;gap:12px;}
+.test-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--taupe));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;color:white;font-weight:600;}
+.test-name{font-size:13px;font-weight:600;color:var(--dark);}
+.test-detail{font-size:11px;color:var(--soft);}
+
+/* STEPS */
+.steps-section{background:var(--warm);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;position:relative;}
+.steps::before{content:'';position:absolute;top:36px;left:calc(12.5% + 36px);right:calc(12.5% + 36px);height:1px;background:linear-gradient(90deg,var(--blush),var(--taupe),var(--blush));}
+.step{text-align:center;}
+.step-num{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;font-family:'Playfair Display',serif;font-size:24px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;position:relative;z-index:1;box-shadow:0 8px 24px rgba(200,167,161,.4);}
+.step h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:8px;}
+.step p{font-size:13px;color:var(--mid);line-height:1.7;}
+
+/* PRICING */
+.pricing-section{background:linear-gradient(160deg,var(--blush) 0%,var(--cream) 100%);padding:100px 40px;position:relative;overflow:hidden;}
+.pricing-card{background:white;border-radius:28px;padding:56px 48px;max-width:500px;margin:50px auto 0;box-shadow:0 30px 80px rgba(0,0,0,.1);position:relative;}
+.pricing-badge{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--coral),var(--rose));color:white;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:8px 24px;border-radius:40px;white-space:nowrap;}
+.pricing-from{font-size:13px;color:var(--soft);text-decoration:line-through;margin-bottom:6px;}
+.pricing-price{font-family:'Playfair Display',serif;font-size:72px;color:var(--dark);line-height:1;margin-bottom:4px;}
+.pricing-price sup{font-size:28px;vertical-align:top;margin-top:16px;display:inline-block;}
+.pricing-period{font-size:13px;color:var(--soft);margin-bottom:36px;}
+.pricing-features{list-style:none;margin-bottom:36px;}
+.pricing-features li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--cream);font-size:14px;color:var(--mid);}
+.pricing-features li:last-child{border:none;}
+.pricing-features li::before{content:'✓';width:20px;height:20px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.pricing-cta{width:100%;padding:20px;font-size:15px;letter-spacing:2px;justify-content:center;}
+.pricing-guarantee{margin-top:18px;font-size:12px;color:var(--soft);display:flex;align-items:center;justify-content:center;gap:6px;}
+
+/* FAQ */
+.faq-section{background:var(--warm);}
+.faq-list{max-width:680px;margin:0 auto;}
+.faq-item{border-bottom:1px solid rgba(210,196,181,.5);padding:22px 0;}
+.faq-q{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.faq-toggle{width:26px;height:26px;border-radius:50%;background:var(--cream);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px;transition:all .3s;}
+.faq-a{font-size:14px;color:var(--mid);line-height:1.8;margin-top:14px;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-toggle{background:var(--coral);color:white;transform:rotate(45deg);}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,var(--dark) 0%,#3D2E28 100%);text-align:center;position:relative;overflow:hidden;padding:100px 40px;}
+.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(214,164,154,.12) 0%,transparent 60%);}
+.cta-final .section-title{color:white;}
+.cta-final .section-sub{color:var(--taupe);margin:0 auto 36px;}
+.cta-final-inner{position:relative;z-index:1;}
+
+footer{background:var(--dark);padding:36px 40px;text-align:center;border-top:1px solid rgba(210,196,181,.1);}
+footer p{font-size:13px;color:var(--soft);}
+footer a{color:var(--coral);text-decoration:none;}
+
+/* ANIMATIONS */
+.anim{opacity:0;transform:translateY(20px);transition:all .6s ease;}
+.anim.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center;}
+  .problem-grid{grid-template-columns:1fr;gap:40px;}
+  .test-grid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr 1fr;gap:28px;}
+  .steps::before{display:none;}
+  .proof-bar{gap:24px;}
+  .proof-div{display:none;}
+  .tool-explorer{grid-template-columns:1fr;}
+  .bonus-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  section{padding:60px 20px;}
+  .hero-inner{padding:60px 20px;}
+  .steps{grid-template-columns:1fr;}
+  .bonus-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Planner <em>Santa Data</em></a>
+  <a href="#preco" class="nav-cta">Começar agora</a>
+</nav>
+
+<!-- SEÇÃO 1: HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <span class="hero-tag">✦ Planeje com amor e leveza</span>
+      <h1>O planejamento do seu casamento <em>merece ser tão bonito quanto o dia.</em></h1>
+      <p class="hero-sub">Chega de planilhas confusas, papéis espalhados e noites sem dormir pensando nas pendências. O Planner Santa Data organiza cada detalhe do seu grande dia com praticidade, ordem e amor.</p>
+      <a href="#preco" class="btn-primary">✦ Quero planejar com leveza</a>
+      <div class="hero-price">
+        <span class="from">De R$ 147,90</span>
+        <span class="price"><sup style="font-size:22px;vertical-align:top;margin-top:10px;">R$</sup>69<sup style="font-size:22px;vertical-align:top;margin-top:10px;">,90</sup></span>
+        <span class="period">por ano · acesso completo</span>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <div class="float-badge fb1">💍 + de 19 módulos completos</div>
+      <div class="mockup-frame">
+        <div class="mockup-top">
+          <div class="mockup-dots"><span></span><span></span><span></span></div>
+          <span class="mockup-ttl">Planner Santa Data</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mstat-row">
+            <div class="mstat"><div class="mstat-v">247</div><div class="mstat-l">Dias</div></div>
+            <div class="mstat"><div class="mstat-v">180</div><div class="mstat-l">Convidados</div></div>
+            <div class="mstat"><div class="mstat-v">78%</div><div class="mstat-l">Concluído</div></div>
+          </div>
+          <div class="mrow"><div class="mdot" style="background:#C8A7A1;"></div><span class="mtxt">Buffet — contrato assinado</span><span class="mbadge bg-green">✓ Pago</span></div>
+          <div class="mrow"><div class="mdot" style="background:#A3B1C6;"></div><span class="mtxt">Fotógrafa — 2ª prova do vestido</span><span class="mbadge bg-yellow">Pendente</span></div>
+          <div class="mrow"><div class="mdot" style="background:#A6A69D;"></div><span class="mtxt">Decoração — reunião de briefing</span><span class="mbadge bg-green">✓ Pago</span></div>
+        </div>
+      </div>
+      <div class="float-badge fb2">🌸 6 temas visuais exclusivos</div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 2: PROVA SOCIAL -->
+<div class="proof-bar">
+  <div class="proof-item">⭐⭐⭐⭐⭐ <strong>4.9/5</strong> avaliação</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">💍 <strong>500+</strong> noivas organizadas</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">📱 <strong>5 idiomas</strong> disponíveis</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">🔒 <strong>Dados seguros</strong> e privados</div>
+</div>
+
+<!-- SEÇÃO 3: PROBLEMA -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-text">
+        <span class="section-tag">✦ A realidade que ninguém conta</span>
+        <h2>O noivado deveria ser <em>mágico.</em> Mas às vezes parece um caos.</h2>
+        <p>Você está no momento mais especial da sua vida e ao mesmo tempo tentando lembrar de dezenas de detalhes, comparando orçamentos e respondendo grupos de WhatsApp.</p>
+        <p>Não é fraqueza. É o reflexo de um planejamento sem a ferramenta certa.</p>
+        <ul class="problem-list">
+          <li>Planilhas no Excel que nunca ficam organizadas</li>
+          <li>Medo constante de esquecer algum detalhe importante</li>
+          <li>Informações espalhadas em blocos de notas, fotos e grupos</li>
+          <li>Dificuldade em controlar o orçamento sem estourar</li>
+          <li>Noites mal dormidas pensando no que pode dar errado</li>
+        </ul>
+      </div>
+      <div class="problem-quote">
+        <p>"Eu tinha mil abas abertas na cabeça. Lista de convidados, orçamento, familiares querendo opinar em tudo... e eu tentando lembrar de aproveitar o momento mais especial da minha vida."</p>
+        <div class="pq-author">
+          <div class="pq-avatar">M</div>
+          <div>
+            <div class="pq-name">Mariana Silva</div>
+            <div class="pq-detail">Casou em fevereiro de 2026 · Fortaleza, CE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 4: EXPLORADOR DE FERRAMENTAS -->
+<section class="tools-section">
+  <div class="container">
+    <div class="tools-header">
+      <span class="section-tag">✦ Tudo que você precisa</span>
+      <h2 class="section-title">Descubra as <em>mais de 19 ferramentas</em> que organizam seu casamento do início ao fim!</h2>
+      <p class="section-sub" style="margin:0 auto;">Clique em cada ferramenta e veja como ela funciona na prática.</p>
+    </div>
+    <div class="tool-explorer">
+      <!-- LISTA -->
+      <div class="tool-list">
+        <div class="tool-item active" data-tool="financeiro"><span class="tool-icon">💰</span><div><div class="tool-name">Financeiro</div><div class="tool-sub">Orçamento sob controle</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="fornecedores"><span class="tool-icon">🤝</span><div><div class="tool-name">Fornecedores</div><div class="tool-sub">Contatos e contratos</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="convidados"><span class="tool-icon">👥</span><div><div class="tool-name">Convidados & Mesas</div><div class="tool-sub">Confirmações e organização</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="tarefas"><span class="tool-icon">📋</span><div><div class="tool-name">Tarefas & Prazos</div><div class="tool-sub">Checklists inteligentes</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="agenda"><span class="tool-icon">⏳</span><div><div class="tool-name">Agenda & Contagem</div><div class="tool-sub">Cronograma do dia</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="cortejo"><span class="tool-icon">💐</span><div><div class="tool-name">Cortejo</div><div class="tool-sub">Padrinhos e madrinhas</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="playlist"><span class="tool-icon">🎵</span><div><div class="tool-name">Playlist</div><div class="tool-sub">Trilha sonora perfeita</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="civil"><span class="tool-icon">⚖️</span><div><div class="tool-name">Civil & Cartório</div><div class="tool-sub">Documentação completa</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="enxoval"><span class="tool-icon">🏡</span><div><div class="tool-name">Enxoval</div><div class="tool-sub">Lista do lar</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="lua"><span class="tool-icon">🌙</span><div><div class="tool-name">Lua de Mel</div><div class="tool-sub">Planejamento da viagem</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="eventos"><span class="tool-icon">🎉</span><div><div class="tool-name">Eventos</div><div class="tool-sub">Chá, despedida e mais</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="temas"><span class="tool-icon">🎨</span><div><div class="tool-name">6 Temas Visuais</div><div class="tool-sub">Do seu jeito</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="moodboard"><span class="tool-icon">🖼️</span><div><div class="tool-name">Moodboard</div><div class="tool-sub">Painel de inspiração</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="biblioteca"><span class="tool-icon">📚</span><div><div class="tool-name">Biblioteca</div><div class="tool-sub">14 documentos prontos</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="contratos"><span class="tool-icon">📁</span><div><div class="tool-name">Contratos</div><div class="tool-sub">Google Drive integrado</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="carta"><span class="tool-icon">💌</span><div><div class="tool-name">Carta para Você</div><div class="tool-sub">Mensagem especial</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="perfil"><span class="tool-icon">👰</span><div><div class="tool-name">Perfil</div><div class="tool-sub">Personalize tudo</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="pdf"><span class="tool-icon">📄</span><div><div class="tool-name">PDFs & Planilhas</div><div class="tool-sub">Exporte com um clique</div></div><span class="tool-arrow">→</span></div>
+        <div class="tool-item" data-tool="idiomas"><span class="tool-icon">🌍</span><div><div class="tool-name">5 Idiomas & Moedas</div><div class="tool-sub">Para noivas do mundo</div></div><span class="tool-arrow">→</span></div>
+      </div>
+
+      <!-- PAINÉIS -->
+      <div class="panels-container">
+
+        <div class="tool-panel active" id="panel-financeiro">
+          <div class="panel-header"><span class="panel-icon">💰</span><div><div class="panel-title">Controle Financeiro</div><div class="panel-sub">Nunca mais estoure o orçamento</div></div></div>
+          <div class="panel-desc">Acompanhe cada gasto em tempo real com gráfico de progresso. Veja o que foi pago, o que está pendente e exporte para Google Planilhas.</div>
+          <div class="pmk">
+            <div class="pmk-stats">
+              <div class="pmk-stat" style="border-left:3px solid var(--coral);"><div class="pmk-sv">R$ 45k</div><div class="pmk-sl">Orçamento</div></div>
+              <div class="pmk-stat" style="border-left:3px solid #4CAF50;"><div class="pmk-sv" style="color:#2E7D32;">R$ 28k</div><div class="pmk-sl">Pago</div></div>
+              <div class="pmk-stat" style="border-left:3px solid #FFC107;"><div class="pmk-sv" style="color:#B7791F;">R$ 17k</div><div class="pmk-sl">A pagar</div></div>
+            </div>
+            <div class="pmk-bar"><div class="pmk-bar-fill" style="width:63%;"></div></div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">Buffet · R$ 15.000</span><span class="pmk-badge badge-g">Pago</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">Fotografia · R$ 8.000</span><span class="pmk-badge badge-g">Pago</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">Decoração · R$ 12.000</span><span class="pmk-badge badge-y">Pendente</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-fornecedores">
+          <div class="panel-header"><span class="panel-icon">🤝</span><div><div class="panel-title">Gestão de Fornecedores</div><div class="panel-sub">Todos os contatos em um lugar</div></div></div>
+          <div class="panel-desc">Registre nome, contato, valor e status de cada fornecedor. Compartilhe com sua cerimonialista com um clique.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt"><strong>Maria Flores</strong> · Decoração · R$ 12.000</span><span class="pmk-badge badge-g">Contratado</span></div>
+              <div class="pmk-row" style="padding:2px 0 10px 17px;font-size:11px;color:var(--soft);">📞 (85) 99999-0001</div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt"><strong>Studio Lux</strong> · Fotografia · R$ 8.000</span><span class="pmk-badge badge-g">Contratado</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt"><strong>Banda Som & Cia</strong> · Música</span><span class="pmk-badge badge-y">Negociando</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-convidados">
+          <div class="panel-header"><span class="panel-icon">👥</span><div><div class="panel-title">Convidados & Mapa de Mesas</div><div class="panel-sub">Confirmações e organização</div></div></div>
+          <div class="panel-desc">Gerencie toda a lista, acompanhe confirmações e organize o mapa de mesas. Exporte para o cerimonialista em segundos.</div>
+          <div class="pmk">
+            <div class="pmk-stats">
+              <div class="pmk-stat"><div class="pmk-sv">180</div><div class="pmk-sl">Total</div></div>
+              <div class="pmk-stat"><div class="pmk-sv" style="color:#2E7D32;">142</div><div class="pmk-sl">Confirmados</div></div>
+              <div class="pmk-stat"><div class="pmk-sv" style="color:#B7791F;">38</div><div class="pmk-sl">Aguardando</div></div>
+            </div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">Ana Costa — Família da noiva</span><span class="pmk-badge badge-g">✓</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">Fernanda Souza — Amigos</span><span class="pmk-badge badge-y">?</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#ef5350;"></div><span class="pmk-txt">Pedro Alves — Família do noivo</span><span class="pmk-badge badge-r">Não vai</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-tarefas">
+          <div class="panel-header"><span class="panel-icon">📋</span><div><div class="panel-title">Tarefas & Prazos</div><div class="panel-sub">Checklists por prioridade</div></div></div>
+          <div class="panel-desc">Nunca mais esqueça um detalhe. Crie tarefas com prazo e prioridade e acompanhe o progresso em tempo real.</div>
+          <div class="pmk">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:12px;color:var(--mid);">Progresso geral</span><span style="font-size:12px;font-weight:700;color:var(--coral);">68%</span></div>
+            <div class="pmk-bar" style="margin-bottom:14px;"><div class="pmk-bar-fill" style="width:68%;"></div></div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><span style="color:#2E7D32;font-size:14px;">✓</span><span class="pmk-txt" style="text-decoration:line-through;opacity:.6;">Assinar contrato do buffet</span></div>
+              <div class="pmk-row"><span style="color:#FFC107;font-size:14px;">○</span><span class="pmk-txt">Confirmar lista de convidados</span><span class="pmk-badge badge-r">Alta</span></div>
+              <div class="pmk-row"><span style="color:#FFC107;font-size:14px;">○</span><span class="pmk-txt">Reunião com decoradora</span><span class="pmk-badge badge-y">Média</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-agenda">
+          <div class="panel-header"><span class="panel-icon">⏳</span><div><div class="panel-title">Agenda & Contagem Regressiva</div><div class="panel-sub">O grande dia se aproxima</div></div></div>
+          <div class="panel-desc">Acompanhe a contagem regressiva ao vivo e monte o cronograma completo do dia — do making of à última dança.</div>
+          <div class="pmk">
+            <div style="background:white;border-radius:10px;padding:16px;margin-bottom:12px;text-align:center;">
+              <div style="font-size:11px;color:var(--soft);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Faltam para o grande dia</div>
+              <div style="display:flex;justify-content:center;align-items:center;gap:10px;">
+                <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--coral);font-weight:700;">247</div><div style="font-size:9px;color:var(--soft);letter-spacing:2px;">DIAS</div></div>
+                <div style="font-size:24px;color:var(--taupe);">:</div>
+                <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--coral);">08</div><div style="font-size:9px;color:var(--soft);letter-spacing:2px;">HORAS</div></div>
+                <div style="font-size:24px;color:var(--taupe);">:</div>
+                <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:32px;color:var(--coral);">32</div><div style="font-size:9px;color:var(--soft);letter-spacing:2px;">MIN</div></div>
+              </div>
+              <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--mid);margin-top:10px;font-style:italic;">Ana & Rafael · 15 de novembro de 2026</div>
+            </div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">09h00 — Making of da noiva</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">16h00 — Cerimônia</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt">19h00 — Recepção e jantar</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-cortejo">
+          <div class="panel-header"><span class="panel-icon">💐</span><div><div class="panel-title">Cortejo</div><div class="panel-sub">Organize cada participante</div></div></div>
+          <div class="panel-desc">Cadastre padrinhos, madrinhas, pajens e daminhas. Monte o cortejo perfeito e exporte para o cerimonialista.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt"><strong>Ana Lima</strong> · Madrinha de honra</span><span class="pmk-badge badge-g">Confirmada</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt"><strong>Carlos Melo</strong> · Padrinho</span><span class="pmk-badge badge-g">Confirmado</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt"><strong>Sofia & Miguel</strong> · Pajens</span><span class="pmk-badge badge-y">Aguardando</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt"><strong>Isabela</strong> · Daminha</span><span class="pmk-badge badge-g">Confirmada</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-playlist">
+          <div class="panel-header"><span class="panel-icon">🎵</span><div><div class="panel-title">Playlist do Casamento</div><div class="panel-sub">A trilha sonora perfeita</div></div></div>
+          <div class="panel-desc">Monte a playlist para cada momento — entrada, cerimônia, jantar e festa. Exporte para enviar à banda ou DJ.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">Entrada da noiva · Canon in D</span><span class="pmk-badge badge-b">Cerimônia</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">Saída dos noivos · A Thousand Years</span><span class="pmk-badge badge-b">Cerimônia</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt">Primeira dança · Perfect - Ed Sheeran</span><span class="pmk-badge badge-g">Festa</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">Valsa dos pais · La Vie en Rose</span><span class="pmk-badge badge-g">Festa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-civil">
+          <div class="panel-header"><span class="panel-icon">⚖️</span><div><div class="panel-title">Civil & Cartório</div><div class="panel-sub">Documentação e dia do civil</div></div></div>
+          <div class="panel-desc">Organize toda a documentação, dados do cartório, horário e um moodboard especial para o dia do civil.</div>
+          <div class="pmk">
+            <div class="pmk-stats">
+              <div class="pmk-stat"><div class="pmk-sv" style="color:#2E7D32;">7</div><div class="pmk-sl">Docs ok</div></div>
+              <div class="pmk-stat"><div class="pmk-sv" style="color:#B7791F;">2</div><div class="pmk-sl">Pendentes</div></div>
+              <div class="pmk-stat"><div class="pmk-sv">5</div><div class="pmk-sl">Itens do dia</div></div>
+            </div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><span style="color:#2E7D32;">✓</span><span class="pmk-txt">RG e CPF (noiva e noivo)</span></div>
+              <div class="pmk-row"><span style="color:#2E7D32;">✓</span><span class="pmk-txt">Certidão de nascimento</span></div>
+              <div class="pmk-row"><span style="color:#FFC107;">○</span><span class="pmk-txt">Habilitação de casamento</span><span class="pmk-badge badge-y">Pendente</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-enxoval">
+          <div class="panel-header"><span class="panel-icon">🏡</span><div><div class="panel-title">Enxoval</div><div class="panel-sub">Monte o lar dos seus sonhos</div></div></div>
+          <div class="panel-desc">Lista organizada por cômodo para montar o lar do casal com tranquilidade. Marque o que já tem e o que falta.</div>
+          <div class="pmk">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:12px;color:var(--mid);">Progresso</span><span style="font-size:12px;font-weight:700;color:var(--coral);">42%</span></div>
+            <div class="pmk-bar" style="margin-bottom:14px;"><div class="pmk-bar-fill" style="width:42%;"></div></div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">Quarto — Jogo de cama completo</span><span class="pmk-badge badge-g">✓</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">Cozinha — Panelas e utensílios</span><span class="pmk-badge badge-y">Parcial</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#ef5350;"></div><span class="pmk-txt">Sala — Sofá e decoração</span><span class="pmk-badge badge-r">Falta</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-lua">
+          <div class="panel-header"><span class="panel-icon">🌙</span><div><div class="panel-title">Lua de Mel</div><div class="panel-sub">A viagem dos sonhos</div></div></div>
+          <div class="panel-desc">Planejamento completo da viagem — destino, passagens, hospedagem, documentos e checklist de mala.</div>
+          <div class="pmk">
+            <div style="background:white;border-radius:10px;padding:14px;margin-bottom:12px;text-align:center;">
+              <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--coral);margin-bottom:4px;">🇮🇹 Roma & Cinque Terre</div>
+              <div style="font-size:11px;color:var(--soft);">14 dias · 20 nov — 04 dez 2026</div>
+            </div>
+            <div class="pmk-rows">
+              <div class="pmk-row"><span style="color:#2E7D32;">✓</span><span class="pmk-txt">Passagens compradas</span></div>
+              <div class="pmk-row"><span style="color:#2E7D32;">✓</span><span class="pmk-txt">Hotel reservado — Roma 5 noites</span></div>
+              <div class="pmk-row"><span style="color:#FFC107;">○</span><span class="pmk-txt">Visto e seguro viagem</span><span class="pmk-badge badge-y">Pendente</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-eventos">
+          <div class="panel-header"><span class="panel-icon">🎉</span><div><div class="panel-title">Eventos & Celebrações</div><div class="panel-sub">Chá, despedida e mais</div></div></div>
+          <div class="panel-desc">Organize todos os eventos que antecedem o grande dia — chá de panela, despedida de solteira, ensaio e muito mais.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt"><strong>Chá de panela</strong> · 15 mar 2026</span><span class="pmk-badge badge-g">Confirmado</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt"><strong>Despedida</strong> · 18 out 2026</span><span class="pmk-badge badge-y">Planejando</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt"><strong>Ensaio fotográfico</strong> · 02 nov 2026</span><span class="pmk-badge badge-b">Agendado</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-temas">
+          <div class="panel-header"><span class="panel-icon">🎨</span><div><div class="panel-title">6 Temas Visuais Exclusivos</div><div class="panel-sub">Mude o visual com um clique</div></div></div>
+          <div class="panel-desc">O planner se adapta ao seu estilo. Clique num tema e veja as cores mudarem na hora.</div>
+          <div class="pmk">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;">
+              <div class="theme-btn" data-bg="#FAF9F7" data-accent="#D6A49A" data-sidebar="#EBD5D0" style="background:linear-gradient(135deg,#F5F1EB,#EBD5D0);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid var(--coral);">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#D6A49A;"></div><div style="width:9px;height:9px;border-radius:50%;background:#C8A7A1;"></div><div style="width:9px;height:9px;border-radius:50%;background:#EBD5D0;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#3D3530;">Romântico</div>
+              </div>
+              <div class="theme-btn" data-bg="#FFFAF5" data-accent="#EB7D3D" data-sidebar="#FEF3E8" style="background:linear-gradient(135deg,#FDF6EE,#FDE8D0);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid transparent;">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#EB7D3D;"></div><div style="width:9px;height:9px;border-radius:50%;background:#DD1F55;"></div><div style="width:9px;height:9px;border-radius:50%;background:#FDE8D0;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#2A1A10;">Tropical</div>
+              </div>
+              <div class="theme-btn" data-bg="#F3F0E9" data-accent="#101010" data-sidebar="#F3F0E9" style="background:linear-gradient(135deg,#FDFCF8,#E3DBCC);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid transparent;">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#101010;"></div><div style="width:9px;height:9px;border-radius:50%;background:#3A3530;"></div><div style="width:9px;height:9px;border-radius:50%;background:#E8E4DC;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#101010;">Contemporâneo</div>
+              </div>
+              <div class="theme-btn" data-bg="#FAF8F2" data-accent="#906262" data-sidebar="#FAF8F2" style="background:linear-gradient(135deg,#F4F2EC,#F0E4DC);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid transparent;">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#906262;"></div><div style="width:9px;height:9px;border-radius:50%;background:#4E2323;"></div><div style="width:9px;height:9px;border-radius:50%;background:#F0E4DC;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#2A1A10;">Boho</div>
+              </div>
+              <div class="theme-btn" data-bg="#F2F3ED" data-accent="#8FA888" data-sidebar="#7A8C6E" style="background:linear-gradient(135deg,#F6F1EC,#EAEBDC);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid transparent;">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#4D5038;"></div><div style="width:9px;height:9px;border-radius:50%;background:#8FA888;"></div><div style="width:9px;height:9px;border-radius:50%;background:#EAEBDC;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#2A3020;">Clássico</div>
+              </div>
+              <div class="theme-btn" data-bg="#FAF6EC" data-accent="#404D77" data-sidebar="#C8D8E8" style="background:linear-gradient(135deg,#F2F4F0,#CDDFE9);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;border:2px solid transparent;">
+                <div style="display:flex;justify-content:center;gap:3px;margin-bottom:5px;"><div style="width:9px;height:9px;border-radius:50%;background:#404D77;"></div><div style="width:9px;height:9px;border-radius:50%;background:#859BBA;"></div><div style="width:9px;height:9px;border-radius:50%;background:#CDDFE9;"></div></div>
+                <div style="font-size:10px;font-weight:500;color:#2C3050;">Provençal</div>
+              </div>
+            </div>
+            <div id="theme-preview" style="border-radius:10px;padding:14px;transition:all .4s;background:#FAF9F7;border:2px solid #EBD5D0;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #EBD5D0;">
+                <div id="tp-dot" style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#C8A7A1,#D6A49A);"></div>
+                <div id="tp-title" style="font-family:'Playfair Display',serif;font-size:13px;color:#D6A49A;font-style:italic;">Planner Santa Data</div>
+              </div>
+              <div style="display:flex;gap:8px;">
+                <div id="tp-sidebar" style="width:70px;background:#EBD5D0;border-radius:6px;padding:8px;flex-shrink:0;">
+                  <div style="height:5px;border-radius:2px;background:rgba(0,0,0,.1);margin-bottom:4px;"></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(0,0,0,.07);margin-bottom:3px;width:70%;"></div>
+                  <div style="height:4px;border-radius:2px;background:rgba(0,0,0,.07);margin-bottom:3px;"></div>
+                </div>
+                <div style="flex:1;">
+                  <div style="background:white;border-radius:6px;padding:8px;border:1px solid #EBD5D0;">
+                    <div id="tp-bar" style="height:3px;background:#D6A49A;border-radius:2px;margin-bottom:6px;width:60%;"></div>
+                    <div style="height:3px;border-radius:2px;background:#E4DDD6;margin-bottom:4px;"></div>
+                    <div style="height:3px;border-radius:2px;background:#E4DDD6;width:75%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-moodboard">
+          <div class="panel-header"><span class="panel-icon">🖼️</span><div><div class="panel-title">Moodboard de Inspiração</div><div class="panel-sub">O casamento dos seus sonhos em imagens</div></div></div>
+          <div class="panel-desc">Organize suas referências visuais por categoria. Cole links de imagens do Pinterest, Instagram ou qualquer site.</div>
+          <div class="pmk">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;">
+              <div style="background:linear-gradient(135deg,#EBD5D0,#D2C4B5);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">💐</div>
+              <div style="background:linear-gradient(135deg,#D2C4B5,#BFBAB2);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">👗</div>
+              <div style="background:linear-gradient(135deg,#F5F1EB,#EBD5D0);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">🕯️</div>
+              <div style="background:linear-gradient(135deg,#A3B1C6,#8B9EA8);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">🎂</div>
+              <div style="background:linear-gradient(135deg,#EDE0D0,#D2C4B5);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">✉️</div>
+              <div style="background:linear-gradient(135deg,#C8A7A1,#D6A49A);border-radius:8px;height:60px;display:flex;align-items:center;justify-content:center;font-size:22px;">💍</div>
+            </div>
+            <div style="font-size:12px;color:var(--mid);text-align:center;">6 categorias · Cole links de qualquer site</div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-biblioteca">
+          <div class="panel-header"><span class="panel-icon">📚</span><div><div class="panel-title">Biblioteca de Documentos</div><div class="panel-sub">14 documentos prontos para usar</div></div></div>
+          <div class="panel-desc">Roteiros, checklists e modelos profissionais que economizam horas do seu planejamento.</div>
+          <div class="pmk">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px;margin-bottom:8px;border:1px solid rgba(210,196,181,.3);">
+              <span style="font-size:20px;">🍽️</span><div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--dark);">Roteiro para visita ao buffet</div><div style="font-size:11px;color:var(--soft);">Perguntas essenciais antes de fechar</div></div><div style="font-size:10px;padding:3px 10px;background:var(--coral);color:white;border-radius:20px;">Abrir</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:white;border-radius:10px;margin-bottom:8px;border:1px solid rgba(210,196,181,.3);">
+              <span style="font-size:20px;">📅</span><div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--dark);">Checklist — Dia do casamento</div><div style="font-size:11px;color:var(--soft);">Do acordo ao altar</div></div><div style="font-size:10px;padding:3px 10px;background:var(--coral);color:white;border-radius:20px;">Abrir</div>
+            </div>
+            <div style="text-align:center;font-size:12px;color:var(--soft);margin-top:8px;">+ 12 documentos disponíveis</div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-contratos">
+          <div class="panel-header"><span class="panel-icon">📁</span><div><div class="panel-title">Pasta de Contratos</div><div class="panel-sub">Google Drive integrado</div></div></div>
+          <div class="panel-desc">Acesse e organize todos os contratos dos seus fornecedores direto pelo planner, com integração ao Google Drive.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">📄 Contrato — Buffet Santa Clara</span><span class="pmk-badge badge-g">Assinado</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">📄 Contrato — Studio Lux Foto</span><span class="pmk-badge badge-g">Assinado</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">📄 Proposta — Decoração Flores</span><span class="pmk-badge badge-y">Pendente</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt">📄 Contrato — Banda Som & Arte</span><span class="pmk-badge badge-r">Negociando</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-carta">
+          <div class="panel-header"><span class="panel-icon">💌</span><div><div class="panel-title">Carta para Você</div><div class="panel-sub">Uma mensagem especial</div></div></div>
+          <div class="panel-desc">Um espaço só seu para guardar pensamentos, emoções e lembranças desta fase tão especial.</div>
+          <div class="pmk" style="text-align:center;padding:24px;">
+            <div style="font-family:'Playfair Display',serif;font-size:30px;color:var(--coral);margin-bottom:12px;">💌</div>
+            <div style="font-family:'Playfair Display',serif;font-size:15px;color:var(--mid);font-style:italic;line-height:1.7;">"Querida Ana,<br/>Hoje faltam 247 dias para o momento<br/>mais esperado da sua vida..."</div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-perfil">
+          <div class="panel-header"><span class="panel-icon">👰</span><div><div class="panel-title">Perfil & Configurações</div><div class="panel-sub">Personalize tudo</div></div></div>
+          <div class="panel-desc">Configure o planner com os dados do seu casamento — nome do casal, data, orçamento, tema, idioma e moeda.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">Nome do casal</span><span style="font-size:12px;color:var(--mid);">Ana & Rafael</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">Data do casamento</span><span style="font-size:12px;color:var(--mid);">15/11/2026</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt">Orçamento total</span><span style="font-size:12px;color:var(--mid);">R$ 45.000</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">Tema visual</span><span class="pmk-badge badge-b">Romântico</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-pdf">
+          <div class="panel-header"><span class="panel-icon">📄</span><div><div class="panel-title">PDFs & Planilhas</div><div class="panel-sub">Exporte com um clique</div></div></div>
+          <div class="panel-desc">Exporte qualquer módulo em PDF personalizado com o tema do seu casamento ou em planilha para o Google Sheets.</div>
+          <div class="pmk">
+            <div class="pmk-rows">
+              <div class="pmk-row"><div class="pmk-dot" style="background:#C8A7A1;"></div><span class="pmk-txt">PDF Financeiro — tema Romântico</span><span class="pmk-badge badge-g">✓</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A3B1C6;"></div><span class="pmk-txt">Planilha Convidados — Google Sheets</span><span class="pmk-badge badge-g">✓</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#A6A69D;"></div><span class="pmk-txt">PDF Cortejo — para cerimonialista</span><span class="pmk-badge badge-g">✓</span></div>
+              <div class="pmk-row"><div class="pmk-dot" style="background:#FFC107;"></div><span class="pmk-txt">PDF Fornecedores — lista completa</span><span class="pmk-badge badge-g">✓</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-panel" id="panel-idiomas">
+          <div class="panel-header"><span class="panel-icon">🌍</span><div><div class="panel-title">5 Idiomas & Moedas</div><div class="panel-sub">Para noivas do mundo todo</div></div></div>
+          <div class="panel-desc">Disponível em Português, Inglês, Espanhol, Italiano e Francês. Com seletor de moeda para noivas em qualquer lugar do mundo.</div>
+          <div class="pmk">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="background:white;border-radius:8px;padding:10px;text-align:center;font-size:13px;">🇧🇷 Português</div>
+              <div style="background:white;border-radius:8px;padding:10px;text-align:center;font-size:13px;">🇺🇸 English</div>
+              <div style="background:white;border-radius:8px;padding:10px;text-align:center;font-size:13px;">🇪🇸 Español</div>
+              <div style="background:white;border-radius:8px;padding:10px;text-align:center;font-size:13px;">🇮🇹 Italiano</div>
+              <div style="background:white;border-radius:8px;padding:10px;text-align:center;font-size:13px;grid-column:span 2;">🇫🇷 Français</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /panels-container -->
+    </div><!-- /tool-explorer -->
+  </div>
+</section>
+
+<!-- SEÇÃO 5: URGÊNCIA -->
+<section class="urgency-section" id="oferta">
+  <div class="urgency-inner">
+    <div class="urgency-tag">🔥 Campanha especial para noivas que decidem agora</div>
+    <h2 class="urgency-title">Feche hoje e desbloqueie <em style="color:var(--coral);font-style:italic;">5 bônus exclusivos</em></h2>
+    <p class="urgency-sub">que não ficarão disponíveis depois que o cronômetro zerar.</p>
+    <p class="urgency-disclaimer">Esta é uma ação especial e temporária. Quando o tempo acabar, os bônus saem do ar.</p>
+    <div class="countdown-big">
+      <div class="cb-unit"><div class="cb-val" id="urg-h">15</div><div class="cb-lbl">horas</div></div>
+      <div class="cb-sep">:</div>
+      <div class="cb-unit"><div class="cb-val" id="urg-m">46</div><div class="cb-lbl">minutos</div></div>
+      <div class="cb-sep">:</div>
+      <div class="cb-unit"><div class="cb-val" id="urg-s">17</div><div class="cb-lbl">segundos</div></div>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="bonus-icon">📋</div><div class="bonus-name">Checklist dos 12 Meses</div><div class="bonus-desc">O que fazer a cada mês do planejamento</div><div class="bonus-value">Bônus #1</div></div>
+      <div class="bonus-card"><div class="bonus-icon">📸</div><div class="bonus-name">Guia da Noiva Fotogênica</div><div class="bonus-desc">Poses, referências e dicas para as fotos perfeitas</div><div class="bonus-value">Bônus #2</div></div>
+      <div class="bonus-card"><div class="bonus-icon">💌</div><div class="bonus-name">Votos Inesquecíveis</div><div class="bonus-desc">Templates e dicas para votos emocionantes</div><div class="bonus-value">Bônus #3</div></div>
+      <div class="bonus-card"><div class="bonus-icon">💰</div><div class="bonus-name">Guia Casamento Econômico</div><div class="bonus-desc">Como economizar até 30% sem abrir mão do sonho</div><div class="bonus-value">Bônus #4</div></div>
+      <div class="bonus-card"><div class="bonus-icon">🛍️</div><div class="bonus-name">2 Grupos de Promoções</div><div class="bonus-desc">Ofertas para casamento + descontos para enxoval da casa nova</div><div class="bonus-value">Bônus #5</div></div>
+    </div>
+    <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Quero os bônus antes que acabem</a>
+  </div>
+</section>
+
+<!-- SEÇÃO 6: MAIS COMPLETO -->
+<section class="complete-section">
+  <div class="complete-inner">
+    <span class="section-tag" style="color:var(--taupe);">✦ Pesquise. Compare. Volte aqui.</span>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);line-height:1.2;color:white;margin-bottom:32px;">
+      Você pode percorrer a internet inteira.<br/>
+      <em style="color:var(--coral);font-style:italic;">Não vai encontrar nada assim.</em>
+    </h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--taupe);line-height:1.8;margin-bottom:20px;">
+      Não dizemos isso com arrogância, dizemos com carinho e convicção. O Planner Santa Data nasceu do desejo genuíno de uma noiva para outras noivas: criar a ferramenta ideal que toda noiva merece ter, mas que simplesmente não existia de forma tão completa, fácil e bonita.
+    </p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--stone);line-height:1.8;margin-bottom:56px;">
+      São + de 19 módulos integrados. 6 temas visuais. PDFs personalizados e planilhas para você compartilhar informações e referências visuais com cerimonial, decorador e quem mais for necessário. Biblioteca de documentos. Integração com Google Drive. Disponível em 5 idiomas e moedas. Tudo pensado nos mínimos detalhes porque o seu casamento merece excelência desde a organização!
+    </p>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;margin-bottom:56px;">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.08);">
+        <div style="padding:18px 24px;text-align:left;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--soft);">Funcionalidade</div>
+        <div style="padding:18px 24px;text-align:center;font-family:'Playfair Display',serif;font-size:14px;color:var(--coral);font-style:italic;">Santa Data</div>
+        <div style="padding:18px 24px;text-align:center;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:1px;color:var(--soft);text-transform:uppercase;">Outros</div>
+      </div>
+      <div id="comp-rows"></div>
+    </div>
+    <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Quero o mais completo</a>
+  </div>
+</section>
+
+<!-- SEÇÃO 7: DEPOIMENTOS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="section-tag">✦ O que as noivas dizem</span>
+      <h2 class="section-title">Histórias reais de <em>casamentos organizados</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card anim">
+        <div class="stars">★★★★★</div>
+        <p>"Finalmente encontrei uma ferramenta que parece ter sido feita especialmente pra mim. O controle financeiro me salvou de estourar o orçamento três vezes!"</p>
+        <div class="test-author"><div class="test-avatar">A</div><div><div class="test-name">Ana Beatriz Costa</div><div class="test-detail">Casando em junho de 2025</div></div></div>
+      </div>
+      <div class="test-card anim">
+        <div class="stars">★★★★★</div>
+        <p>"A biblioteca de documentos é incrível! O roteiro para visita ao buffet me fez perguntas que eu jamais teria pensado. Me sinto muito mais segura agora."</p>
+        <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Camila Rodrigues</div><div class="test-detail">Casou em março de 2025</div></div></div>
+      </div>
+      <div class="test-card anim">
+        <div class="stars">★★★★★</div>
+        <p>"Meu noivo ficou impressionado com a organização. A página de contratos no Google Drive foi um diferencial enorme — tudo num lugar só, sem stress."</p>
+        <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Juliana Ferreira</div><div class="test-detail">Casou em janeiro de 2025</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 8: COMO FUNCIONA -->
+<section class="steps-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="section-tag">✦ Simples assim</span>
+      <h2 class="section-title">Começa a usar em <em>menos de 5 minutos</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step anim"><div class="step-num">1</div><h3>Adquira o acesso</h3><p>Pagamento seguro via cartão, Pix ou boleto. Acesso liberado imediatamente.</p></div>
+      <div class="step anim"><div class="step-num">2</div><h3>Personalize</h3><p>Escolha seu tema visual favorito e insira as informações do seu casamento.</p></div>
+      <div class="step anim"><div class="step-num">3</div><h3>Organize tudo</h3><p>Use os mais de 19 módulos para organizar cada detalhe do seu grande dia.</p></div>
+      <div class="step anim"><div class="step-num">4</div><h3>Curta o processo</h3><p>Com tudo organizado, você tem energia para aproveitar cada momento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 9: PREÇO -->
+<section class="pricing-section" id="preco">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-tag">✦ Investimento</span>
+      <h2 class="section-title">Um planejamento à altura <em>do seu sonho</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Por menos do que uma lembrancinha, você organiza o casamento inteiro.</p>
+      <div class="pricing-card">
+        <div class="pricing-badge">🔥 Oferta especial + 5 bônus exclusivos</div>
+        <div class="pricing-from">De R$ 147,90</div>
+        <div class="pricing-price"><sup>R$</sup>69<sup>,90</sup></div>
+        <div class="pricing-period">por ano · acesso completo a todos os módulos</div>
+        <ul class="pricing-features">
+          <li>+ de 19 módulos completos de planejamento</li>
+          <li>6 temas visuais exclusivos</li>
+          <li>Geração de PDFs personalizados</li>
+          <li>Exportação para Google Planilhas</li>
+          <li>Biblioteca com 14 documentos prontos</li>
+          <li>Pasta de contratos integrada ao Google Drive</li>
+          <li>5 idiomas e moedas disponíveis</li>
+          <li>Acesso em qualquer dispositivo</li>
+          <li>+ 5 bônus exclusivos desta campanha</li>
+        </ul>
+        <a href="#" class="btn-primary pricing-cta">✦ Quero meu planner + bônus agora</a>
+        <div class="pricing-guarantee">🔒 Pagamento seguro · 7 dias de garantia · Acesso imediato</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 10: FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px;">
+      <span class="section-tag">✦ Dúvidas frequentes</span>
+      <h2 class="section-title">Tudo que você <em>precisa saber</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Como acesso o planner após a compra?<div class="faq-toggle">+</div></div><div class="faq-a">Após a confirmação do pagamento, você recebe um e-mail com seu link de acesso. Em segundos, seu planner já está pronto para usar em qualquer dispositivo.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Posso compartilhar com meu noivo ou cerimonialista?<div class="faq-toggle">+</div></div><div class="faq-a">Sim! Você pode compartilhar o acesso com seu noivo, familiares e cerimonialista. A integração com o Google Drive facilita o compartilhamento de contratos e documentos.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Por quanto tempo tenho acesso?<div class="faq-toggle">+</div></div><div class="faq-a">Seu acesso é válido por 1 ano — mais do que suficiente para planejar seu casamento com tranquilidade. Na renovação, você tem desconto especial de fidelidade.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar?<div class="faq-toggle">+</div></div><div class="faq-a">Oferecemos 7 dias de garantia incondicional. Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu investimento sem perguntas.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Funciona no celular?<div class="faq-toggle">+</div></div><div class="faq-a">Sim! O Planner Santa Data é totalmente responsivo e funciona perfeitamente em celular, tablet e computador.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Os bônus ficam disponíveis para sempre?<div class="faq-toggle">+</div></div><div class="faq-a">Os 5 bônus são exclusivos desta campanha e ficam disponíveis apenas enquanto o cronômetro estiver ativo. Após o prazo, o planner continua disponível, mas sem os bônus.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 11: CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <span class="section-tag" style="color:var(--taupe);">✦ Você merece esse momento</span>
+    <h2 class="section-title">Seu casamento é único.<br/><em>Seu planejamento também deveria ser.</em></h2>
+    <p class="section-sub">Junte-se a centenas de noivas que já estão planejando o casamento dos sonhos com leveza, organização e amor.</p>
+    <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Começar agora por R$ 69,90/ano</a>
+    <p style="color:var(--soft);font-size:12px;margin-top:20px;letter-spacing:1px;">🔒 Pagamento seguro · 7 dias de garantia · Acesso imediato</p>
+  </div>
+</section>
+
+<!-- SEÇÃO 12: RODAPÉ -->
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:18px;color:var(--taupe);margin-bottom:12px;font-style:italic;">Planner Santa Data</p>
+  <p>© 2025 Planner Santa Data · CNPJ 50.664.079/0001-23</p>
+  <p style="margin-top:8px;"><a href="#">Termos de Uso</a> · <a href="#">Política de Privacidade</a> · <a href="#">plannersantadata.com</a></p>
+</footer>
+
+<script>
+// Tool explorer
+document.querySelectorAll('.tool-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.tool-item').forEach(i => i.classList.remove('active'));
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    item.classList.add('active');
+    const panel = document.getElementById('panel-' + item.dataset.tool);
+    if (panel) panel.classList.add('active');
+  });
+});
+
+// Theme preview
+document.querySelectorAll('.theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.theme-btn').forEach(b => b.style.borderColor = 'transparent');
+    btn.style.borderColor = btn.dataset.accent;
+    const preview = document.getElementById('theme-preview');
+    const sidebar = document.getElementById('tp-sidebar');
+    const title = document.getElementById('tp-title');
+    const bar = document.getElementById('tp-bar');
+    const dot = document.getElementById('tp-dot');
+    if (preview) {
+      preview.style.background = btn.dataset.bg;
+      preview.style.borderColor = btn.dataset.accent;
+    }
+    if (sidebar) sidebar.style.background = btn.dataset.sidebar;
+    if (title) title.style.color = btn.dataset.accent;
+    if (bar) bar.style.background = btn.dataset.accent;
+    if (dot) dot.style.background = 'linear-gradient(135deg,' + btn.dataset.accent + ',' + btn.dataset.sidebar + ')';
+  });
+});
+
+// Comparison table
+(function(){
+  var rows = [
+    ['+19 módulos completos de planejamento','✓','2 a 5 módulos'],
+    ['Controle financeiro com gráfico de progresso','✓','Básico ou ausente'],
+    ['Gestão de fornecedores com status e contatos','✓','Básico'],
+    ['Lista de convidados com confirmações','✓','Básico'],
+    ['Mapa de mesas interativo','✓','✗'],
+    ['Organização completa do cortejo','✓','✗'],
+    ['Playlist por momento da cerimônia','✓','✗'],
+    ['Agenda & contagem regressiva ao vivo','✓','✗'],
+    ['Tarefas e prazos por prioridade','✓','Básico'],
+    ['Página Civil & Cartório com checklist','✓','✗'],
+    ['Enxoval organizado por cômodo','✓','✗'],
+    ['Planejamento completo da lua de mel','✓','✗'],
+    ['Eventos e celebrações pré-casamento','✓','✗'],
+    ['Moodboard com links de referências visuais','✓','Raramente'],
+    ['Biblioteca com 14 documentos prontos','✓','✗'],
+    ['Pasta de contratos com Google Drive','✓','✗'],
+    ['Carta especial para a noiva','✓','✗'],
+    ['PDFs personalizados com tema visual','✓','✗'],
+    ['Exportação para Google Planilhas','✓','✗'],
+    ['6 temas visuais exclusivos','✓','✗'],
+    ['Disponível em 5 idiomas','✓','✗'],
+    ['Seletor de moeda internacional','✓','✗'],
+    ['Acesso em qualquer dispositivo','✓','Às vezes'],
+    ['Suporte dedicado','✓','Raramente'],
+  ];
+  var c = document.getElementById('comp-rows');
+  if (!c) return;
+  rows.forEach(function(r, i) {
+    var d = document.createElement('div');
+    d.style.cssText = 'display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.05);' + (i%2===0 ? 'background:rgba(255,255,255,.02);' : '');
+    d.innerHTML = '<div style="padding:12px 24px;text-align:left;font-family:Jost,sans-serif;font-size:13px;color:rgba(255,255,255,.75);">' + r[0] + '</div>'
+      + '<div style="padding:12px 24px;text-align:center;font-size:16px;color:#81C784;font-weight:700;">' + r[1] + '</div>'
+      + '<div style="padding:12px 24px;text-align:center;font-family:Jost,sans-serif;font-size:12px;color:rgba(255,255,255,.3);">' + r[2] + '</div>';
+    c.appendChild(d);
+  });
+})();
+
+// Countdown
+function startCountdown() {
+  var stored = localStorage.getItem('sdCountdown');
+  var end = stored ? parseInt(stored) : Date.now() + (15*3600 + 46*60 + 17)*1000;
+  if (!stored) localStorage.setItem('sdCountdown', end);
+  function tick() {
+    var diff = Math.max(0, end - Date.now());
+    var h = Math.floor(diff/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    var pad = function(n){return String(n).padStart(2,'0');};
+    var eh = document.getElementById('urg-h');
+    var em = document.getElementById('urg-m');
+    var es = document.getElementById('urg-s');
+    if (eh) eh.textContent = pad(h);
+    if (em) em.textContent = pad(m);
+    if (es) es.textContent = pad(s);
+    if (diff > 0) setTimeout(tick, 1000);
+  }
+  tick();
+}
+startCountdown();
+
+// Scroll animations
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.anim').forEach(function(el){ observer.observe(el); });
+
+// Nav shadow
+window.addEventListener('scroll', function(){
+  document.querySelector('nav').style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,.08)' : 'none';
+});
+</script>
+</body>
+</html>
