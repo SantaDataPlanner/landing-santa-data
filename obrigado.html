@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bem-vinda ao Planner Santa Data! 💍</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:linear-gradient(160deg,#F5F1EB 0%,#EBD5D0 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;}
+.card{background:white;border-radius:24px;padding:56px 48px;max-width:560px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.1);text-align:center;}
+.icon{font-size:56px;margin-bottom:24px;}
+h1{font-family:'Playfair Display',serif;font-size:32px;color:#3D3530;margin-bottom:12px;line-height:1.2;}
+h1 em{font-style:italic;color:#D6A49A;}
+.sub{font-family:'Jost',sans-serif;font-size:15px;color:#6B5F58;line-height:1.7;margin-bottom:36px;}
+.btn{display:inline-block;background:linear-gradient(135deg,#C8A7A1,#D6A49A);color:white;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:18px 40px;border-radius:50px;text-decoration:none;box-shadow:0 8px 30px rgba(200,167,161,.4);margin-bottom:40px;}
+.alert{background:#FFF8E1;border:1px solid #FFC107;border-radius:14px;padding:20px 24px;text-align:left;margin-bottom:0;}
+.alert-title{font-weight:600;font-size:14px;color:#3D3530;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.alert-text{font-size:13px;color:#6B5F58;line-height:1.7;}
+.alert-steps{list-style:none;margin-top:10px;}
+.alert-steps li{font-size:13px;color:#6B5F58;padding:4px 0;display:flex;align-items:flex-start;gap:8px;}
+.alert-steps li::before{content:'→';color:#D6A49A;flex-shrink:0;}
+.brand{font-family:'Playfair Display',serif;font-size:14px;color:#9E948D;margin-top:32px;font-style:italic;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">💍</div>
+    <h1>Seu acesso está <em>pronto!</em></h1>
+    <p class="sub">Bem-vinda ao Planner Santa Data! Seu planejamento começa agora — com amor, ordem e leveza. Clique abaixo para acessar seu planner.</p>
+    <a href="https://app.plannersantadata.com" class="btn">✦ Acessar meu Planner agora</a>
+    <div class="alert">
+      <div class="alert-title">⚠️ Verifique sua caixa de e-mail!</div>
+      <div class="alert-text">Enviamos um e-mail de boas-vindas com informações importantes. Se não encontrar na caixa principal, verifique:</div>
+      <ul class="alert-steps">
+        <li>A pasta <strong>Promoções</strong> ou <strong>Spam</strong></li>
+        <li>Arraste o e-mail para a <strong>Caixa de entrada</strong></li>
+        <li>Clique em <strong>"Não é spam"</strong> para sempre receber nossas mensagens</li>
+      </ul>
+    </div>
+    <div class="brand">Planner Santa Data · plannersantadata.com</div>
+  </div>
+</body>
+</html>
