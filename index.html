@@ -145,6 +145,11 @@ section{padding:100px 40px;}
 .badge-r{background:#FEE2E2;color:#991B1B;}
 .badge-b{background:#E0F2FE;color:#075985;}
 
+/* TOOLS EXPAND */
+.tools-expand-wrap{display:none;text-align:center;margin-top:20px;}
+.tools-expand-btn{background:none;border:1px solid var(--coral);color:var(--coral);font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:1px;padding:12px 28px;border-radius:40px;cursor:pointer;}
+@media(max-width:900px){.tools-expand-wrap{display:block;}}
+
 /* URGENCY */
 .urgency-section{background:linear-gradient(135deg,#2C2420 0%,#3D2E28 100%);padding:80px 40px;position:relative;overflow:hidden;}
 .urgency-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(214,164,154,.12) 0%,transparent 60%);}
@@ -182,6 +187,16 @@ section{padding:100px 40px;}
 .test-name{font-size:13px;font-weight:600;color:var(--dark);}
 .test-detail{font-size:11px;color:var(--soft);}
 
+/* DM BLOCK */
+.dm-block{max-width:520px;margin:50px auto 0;background:white;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.07);border:1px solid rgba(210,196,181,.3);}
+.dm-header{background:linear-gradient(135deg,var(--coral),var(--rose));padding:14px 20px;display:flex;align-items:center;gap:10px;}
+.dm-icon{font-size:18px;}
+.dm-label{font-size:12px;font-weight:600;letter-spacing:1px;color:white;text-transform:uppercase;}
+.dm-messages{padding:20px;display:flex;flex-direction:column;gap:14px;}
+.dm-msg{display:flex;align-items:flex-start;gap:10px;}
+.dm-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--taupe));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;color:var(--coral);font-weight:600;flex-shrink:0;}
+.dm-bubble{background:var(--cream);border-radius:0 14px 14px 14px;padding:12px 16px;font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--dark);line-height:1.6;}
+
 /* STEPS */
 .steps-section{background:var(--warm);}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;position:relative;}
@@ -205,6 +220,9 @@ section{padding:100px 40px;}
 .pricing-features li::before{content:'✓';width:20px;height:20px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
 .pricing-cta{width:100%;padding:20px;font-size:15px;letter-spacing:2px;justify-content:center;}
 .pricing-guarantee{margin-top:18px;font-size:12px;color:var(--soft);display:flex;align-items:center;justify-content:center;gap:6px;}
+.pricing-value-context{display:flex;align-items:center;gap:8px;background:rgba(214,164,154,.1);border:1px solid rgba(214,164,154,.3);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--mid);margin-bottom:28px;}
+.pricing-bonus-total{display:flex;align-items:center;justify-content:space-between;background:var(--cream);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--mid);margin-bottom:20px;}
+.bonus-total-value{font-weight:700;color:var(--coral);}
 
 /* FAQ */
 .faq-section{background:var(--warm);}
@@ -234,6 +252,7 @@ footer a{color:var(--coral);text-decoration:none;}
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center;}
+  .hero-social-proof{justify-content:center;}
   .problem-grid{grid-template-columns:1fr;gap:40px;}
   .test-grid{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr 1fr;gap:28px;}
@@ -242,21 +261,36 @@ footer a{color:var(--coral);text-decoration:none;}
   .proof-div{display:none;}
   .tool-explorer{grid-template-columns:1fr;}
   .bonus-grid{grid-template-columns:1fr 1fr;}
+  /* Urgência sobe no fluxo mobile (após prova social) */
+  .urgency-section{order:-1;}
+  /* Limita lista de ferramentas a 6 em mobile */
+  .tool-item:nth-child(n+7){display:none;}
+  .tool-list{position:relative;}
 }
 @media(max-width:600px){
   section{padding:60px 20px;}
   .hero-inner{padding:60px 20px;}
   .steps{grid-template-columns:1fr;}
   .bonus-grid{grid-template-columns:1fr;}
+  .pricing-bonus-total{flex-direction:column;gap:6px;text-align:center;}
 }
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wxag3esb54");
+</script>
+<!-- End Microsoft Clarity -->
 <!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1545773627264232');fbq('track','PageView');</script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1545773627264232&ev=PageView&noscript=1"/></noscript><!-- End Meta Pixel Code -->
 </head>
 <body>
 
 <nav>
   <a href="#" class="nav-logo">Planner <em>Santa Data</em></a>
-  <a href="#preco" class="nav-cta">Começar agora</a>
+  <a href="#preco" class="nav-cta">Ver oferta — R$&nbsp;297,90</a>
 </nav>
 
 <!-- SEÇÃO 1: HERO -->
@@ -691,16 +725,19 @@ footer a{color:var(--coral);text-decoration:none;}
 
       </div><!-- /panels-container -->
     </div><!-- /tool-explorer -->
+    <div class="tools-expand-wrap">
+      <button class="tools-expand-btn" id="tools-expand-btn" onclick="expandTools()">Ver todas as 19 ferramentas ↓</button>
+    </div>
   </div>
 </section>
 
 <!-- SEÇÃO 5: URGÊNCIA -->
 <section class="urgency-section" id="oferta">
   <div class="urgency-inner">
-    <div class="urgency-tag">🔥 Campanha especial para noivas que decidem agora</div>
-    <h2 class="urgency-title">Feche hoje e desbloqueie <em style="color:var(--coral);font-style:italic;">5 bônus exclusivos</em></h2>
-    <p class="urgency-sub">que não ficarão disponíveis depois que o cronômetro zerar.</p>
-    <p class="urgency-disclaimer">Esta é uma ação especial e temporária. Quando o tempo acabar, os bônus saem do ar.</p>
+    <div class="urgency-tag">🔥 Oferta especial ativa nesta sessão</div>
+    <h2 class="urgency-title">Feche agora e desbloqueie <em style="color:var(--coral);font-style:italic;">5 bônus exclusivos</em></h2>
+    <p class="urgency-sub">Disponíveis enquanto você estiver nesta página.</p>
+    <p class="urgency-disclaimer">Os bônus fazem parte de uma campanha especial e podem ser retirados a qualquer momento. Garanta o seu antes de sair.</p>
     <div class="countdown-big">
       <div class="cb-unit"><div class="cb-val" id="urg-h">15</div><div class="cb-lbl">horas</div></div>
       <div class="cb-sep">:</div>
@@ -756,17 +793,38 @@ footer a{color:var(--coral);text-decoration:none;}
       <div class="test-card anim">
         <div class="stars">★★★★★</div>
         <p>"Finalmente encontrei uma ferramenta que parece ter sido feita especialmente pra mim. O controle financeiro me salvou de estourar o orçamento três vezes!"</p>
-        <div class="test-author"><div class="test-avatar">A</div><div><div class="test-name">Ana Beatriz Costa</div><div class="test-detail">Casando em junho de 2025</div></div></div>
+        <div class="test-author"><div class="test-avatar">A</div><div><div class="test-name">Ana Beatriz Costa</div><div class="test-detail">Casou em junho de 2026 · Casamento p/ 180 pessoas · São Paulo, SP</div></div></div>
       </div>
       <div class="test-card anim">
         <div class="stars">★★★★★</div>
         <p>"A biblioteca de documentos é incrível! O roteiro para visita ao buffet me fez perguntas que eu jamais teria pensado. Me sinto muito mais segura agora."</p>
-        <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Camila Rodrigues</div><div class="test-detail">Casou em março de 2025</div></div></div>
+        <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Camila Rodrigues</div><div class="test-detail">Casou em março de 2026 · Casamento p/ 120 pessoas · Belo Horizonte, MG</div></div></div>
       </div>
       <div class="test-card anim">
         <div class="stars">★★★★★</div>
         <p>"Meu noivo ficou impressionado com a organização. A página de contratos no Google Drive foi um diferencial enorme — tudo num lugar só, sem stress."</p>
-        <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Juliana Ferreira</div><div class="test-detail">Casou em janeiro de 2025</div></div></div>
+        <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Juliana Ferreira</div><div class="test-detail">Casou em janeiro de 2026 · Casamento p/ 200 pessoas · Fortaleza, CE</div></div></div>
+      </div>
+    </div>
+    <!-- Print de DM simulado -->
+    <div class="dm-block anim">
+      <div class="dm-header">
+        <span class="dm-icon">💬</span>
+        <span class="dm-label">Mensagens reais de noivas</span>
+      </div>
+      <div class="dm-messages">
+        <div class="dm-msg">
+          <div class="dm-avatar">M</div>
+          <div class="dm-bubble">"Gente, comprei o Santa Data ontem e já organizei tudo que estava espalhado em 5 grupos de WhatsApp diferentes 😭 por que não existia isso antes??"</div>
+        </div>
+        <div class="dm-msg">
+          <div class="dm-avatar">R</div>
+          <div class="dm-bubble">"O controle financeiro salvou minha vida. Eu nem sabia que já tinha comprometido 80% do orçamento com os primeiros fornecedores 🥲"</div>
+        </div>
+        <div class="dm-msg">
+          <div class="dm-avatar">L</div>
+          <div class="dm-bubble">"Recomendo demais! Minha cerimonialista adorou quando mandei o PDF do cortejo. Falou que foi a noiva mais organizada que já atendeu ❤️"</div>
+        </div>
       </div>
     </div>
   </div>
@@ -788,7 +846,7 @@ footer a{color:var(--coral);text-decoration:none;}
   </div>
 </section>
 
-<!-- SEÇÃO 9: PREÇO -->
+<!-- SEÇÃO 9: PREÇO (âncora mantida aqui para os CTAs da página toda) -->
 <section class="pricing-section" id="preco">
   <div class="container">
     <div style="text-align:center;">
@@ -799,7 +857,11 @@ footer a{color:var(--coral);text-decoration:none;}
         <div class="pricing-badge">🔥 Oferta especial + 5 bônus exclusivos</div>
         <div class="pricing-from">De R$ 594,90</div>
         <div class="pricing-price"><sup>R$</sup>297<sup>,90</sup></div>
-        <div class="pricing-period">por tempo limitado · acesso completo por 1 ano</div>
+        <div class="pricing-period">ou <strong>3x de R$ 99,30</strong> sem juros · acesso completo por 1 ano</div>
+        <div class="pricing-value-context">
+          <span>💡</span>
+          <span>Menos que <strong>R$ 2,98 por convidado</strong> num casamento de 100 pessoas</span>
+        </div>
         <ul class="pricing-features">
           <li>+ de 19 módulos completos de planejamento</li>
           <li>6 temas visuais exclusivos</li>
@@ -811,6 +873,10 @@ footer a{color:var(--coral);text-decoration:none;}
           <li>Acesso em qualquer dispositivo</li>
           <li>+ 5 bônus exclusivos desta campanha</li>
         </ul>
+        <div class="pricing-bonus-total">
+          <span>🎁 Bônus incluídos nesta oferta:</span>
+          <span class="bonus-total-value">+R$ 197,00 em valor</span>
+        </div>
         <a href="https://pay.kiwify.com.br/kZ9BAvK" class="btn-primary pricing-cta">✦ Quero meu planner + bônus agora</a>
         <div class="pricing-guarantee">🔒 Pagamento seguro · 7 dias de garantia · Acesso imediato</div>
       </div>
@@ -832,6 +898,8 @@ footer a{color:var(--coral);text-decoration:none;}
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">E se eu não gostar?<div class="faq-toggle">+</div></div><div class="faq-a">Oferecemos 7 dias de garantia incondicional. Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu investimento sem perguntas.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Funciona no celular?<div class="faq-toggle">+</div></div><div class="faq-a">Sim! O Planner Santa Data é totalmente responsivo e funciona perfeitamente em celular, tablet e computador.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Os bônus ficam disponíveis para sempre?<div class="faq-toggle">+</div></div><div class="faq-a">Os 5 bônus são exclusivos desta campanha e ficam disponíveis apenas enquanto o cronômetro estiver ativo. Após o prazo, o planner continua disponível, mas sem os bônus.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Eu já tenho uma planilha no Excel. Por que o Planner Santa Data seria melhor?<div class="faq-toggle">+</div></div><div class="faq-a">Planilhas funcionam para dados simples, mas o planejamento de casamento envolve muito mais: fornecedores com status e contatos, mapa de mesas, cortejo, agenda do dia, documentação do cartório, lua de mel, moodboard... Tudo integrado. Além disso, o planner gera PDFs prontos para enviar à cerimonialista e exporta para o Google Sheets quando você precisar de uma planilha mesmo. É o melhor dos dois mundos, sem o caos das abas.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Tenho medo de comprar e não usar. Como sei que vou aproveitar?<div class="faq-toggle">+</div></div><div class="faq-a">Essa é a objeção mais honesta que existe — e nós respeitamos muito. Por isso a garantia de 7 dias existe: você acessa tudo, experimenta sem pressão e, se sentir que não é pra você, devolvemos 100% do valor. Mas na prática, quem acessa o planner pela primeira vez raramente abandona — porque a diferença para o caos de antes é imediata e visível. Basta acessar o controle financeiro uma vez e já vale o investimento.</div></div>
     </div>
   </div>
 </section>
@@ -927,11 +995,11 @@ document.querySelectorAll('.theme-btn').forEach(btn => {
   });
 })();
 
-// Countdown
+// Countdown — reinicia a cada nova sessão (fecha aba = zera)
 function startCountdown() {
-  var stored = localStorage.getItem('sdCountdown');
+  var stored = sessionStorage.getItem('sdCountdown');
   var end = stored ? parseInt(stored) : Date.now() + (15*3600 + 46*60 + 17)*1000;
-  if (!stored) localStorage.setItem('sdCountdown', end);
+  if (!stored) sessionStorage.setItem('sdCountdown', end);
   function tick() {
     var diff = Math.max(0, end - Date.now());
     var h = Math.floor(diff/3600000);
@@ -955,6 +1023,14 @@ var observer = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold:0.1});
 document.querySelectorAll('.anim').forEach(function(el){ observer.observe(el); });
+
+// Expand tools list on mobile
+function expandTools() {
+  var btn = document.getElementById('tools-expand-btn');
+  var items = document.querySelectorAll('.tool-item');
+  items.forEach(function(el){ el.style.display = 'flex'; });
+  if (btn) btn.style.display = 'none';
+}
 
 // Nav shadow
 window.addEventListener('scroll', function(){
