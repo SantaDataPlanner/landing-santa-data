@@ -254,7 +254,7 @@ footer a{color:var(--coral);text-decoration:none;}
   .hero-inner{grid-template-columns:1fr;gap:40px;text-align:center;}
   .hero-social-proof{justify-content:center;}
   .problem-grid{grid-template-columns:1fr;gap:40px;}
-  .test-grid{grid-template-columns:1fr;}
+  .test-grid{grid-template-columns:1fr!important;max-width:100%!important;}
   .steps{grid-template-columns:1fr 1fr;gap:28px;}
   .steps::before{display:none;}
   .proof-bar{gap:24px;}
@@ -273,6 +273,7 @@ footer a{color:var(--coral);text-decoration:none;}
   .steps{grid-template-columns:1fr;}
   .bonus-grid{grid-template-columns:1fr;}
   .pricing-bonus-total{flex-direction:column;gap:6px;text-align:center;}
+  .before-after-grid{grid-template-columns:1fr!important;}
 }
 </style>
 <!-- Microsoft Clarity -->
@@ -288,6 +289,9 @@ footer a{color:var(--coral);text-decoration:none;}
 </head>
 <body>
 
+<div style="background:linear-gradient(90deg,var(--coral),var(--rose));color:white;text-align:center;padding:10px 20px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:.5px;">
+  💍 Mais de <strong>500 noivas</strong> já planejando o casamento dos sonhos com o Santa Data
+</div>
 <nav>
   <a href="#" class="nav-logo">Planner <em>Santa Data</em></a>
   <a href="#preco" class="nav-cta">Ver oferta</a>
@@ -306,6 +310,7 @@ footer a{color:var(--coral);text-decoration:none;}
         <span><strong>500+ noivas</strong> já planejando com o Santa Data</span>
       </div>
       <a href="#preco" class="btn-primary">✦ Quero planejar com leveza</a>
+      <p class="hero-guarantee" style="margin-top:12px;">🔒 7 dias de garantia · Acesso imediato · Pagamento seguro</p>
     </div>
     <div class="hero-mockup">
       <div class="float-badge fb1">💍 + de 24 módulos completos</div>
@@ -368,6 +373,48 @@ footer a{color:var(--coral);text-decoration:none;}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3b: ANTES × DEPOIS -->
+<section style="background:var(--warm);padding:80px 40px;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="section-tag">✦ A diferença é imediata</span>
+      <h2 class="section-title">De <em>planilhas caóticas</em> a um planner que pensa com você</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;">
+      <!-- ANTES -->
+      <div style="background:white;border-radius:20px;padding:32px;border:2px solid #FEE2E2;position:relative;">
+        <div style="position:absolute;top:-14px;left:24px;background:#FEE2E2;color:#991B1B;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:99px;">Antes</div>
+        <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:20px;margin-top:8px;">Várias planilhas no Google e Excel</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Horas montando antes de usar</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Informação espalhada em 5 abas e grupos de WhatsApp</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Sem controle visual do orçamento</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Mapa de mesas e cortejo em arquivos separados</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Perde tudo se fechar sem salvar</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:#ef5350;flex-shrink:0;margin-top:1px;">✕</span> Nenhum PDF para enviar à cerimonialista</li>
+        </ul>
+      </div>
+      <!-- DEPOIS -->
+      <div style="background:white;border-radius:20px;padding:32px;border:2px solid var(--coral);position:relative;box-shadow:0 12px 40px rgba(214,164,154,.2);">
+        <div style="position:absolute;top:-14px;left:24px;background:linear-gradient(135deg,var(--coral),var(--rose));color:white;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:99px;">Planner Santa Data</div>
+        <div style="font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);margin-bottom:20px;margin-top:8px;">Tudo em um só lugar, pronto em 2 minutos</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> Pronto para usar desde o primeiro acesso</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> 24+ módulos integrados, tudo concentrado</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> Gráfico de progresso financeiro em tempo real</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> Convidados, mesas e cortejo integrados</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> Salvo automaticamente, acesse em qualquer dispositivo</li>
+          <li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--mid);"><span style="color:var(--coral);flex-shrink:0;margin-top:1px;">✓</span> PDF personalizado com um clique para compartilhar</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#preco" class="btn-primary">✦ Quero sair do caos agora</a>
+      <p style="color:var(--soft);font-size:12px;margin-top:12px;letter-spacing:.5px;">🔒 7 dias de garantia · Acesso imediato</p>
     </div>
   </div>
 </section>
@@ -804,6 +851,7 @@ footer a{color:var(--coral);text-decoration:none;}
       <div class="bonus-card"><div class="bonus-icon">🛍️</div><div class="bonus-name">2 Grupos de Promoções</div><div class="bonus-desc">Ofertas para casamento + descontos para enxoval da casa nova</div><div class="bonus-value">Bônus #5</div></div>
     </div>
     <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Quero os bônus antes que acabem</a>
+    <p style="color:var(--soft);font-size:12px;margin-top:14px;letter-spacing:.5px;">🔒 7 dias de garantia · Acesso imediato · Pagamento seguro</p>
   </div>
 </section>
 
@@ -830,6 +878,7 @@ footer a{color:var(--coral);text-decoration:none;}
       <div id="comp-rows"></div>
     </div>
     <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Quero o mais completo</a>
+    <p style="color:var(--stone);font-size:12px;margin-top:14px;letter-spacing:.5px;">🔒 7 dias de garantia · Acesso imediato · Pagamento seguro</p>
   </div>
 </section>
 
@@ -840,42 +889,16 @@ footer a{color:var(--coral);text-decoration:none;}
       <span class="section-tag">✦ O que as noivas dizem</span>
       <h2 class="section-title">Histórias reais de <em>casamentos organizados</em></h2>
     </div>
-    <div class="test-grid">
+    <div class="test-grid" style="grid-template-columns:repeat(2,1fr);max-width:820px;margin:0 auto;">
       <div class="test-card anim">
         <div class="stars">★★★★★</div>
-        <p>"Finalmente encontrei uma ferramenta que parece ter sido feita especialmente pra mim. O controle financeiro me salvou de estourar o orçamento três vezes!"</p>
-        <div class="test-author"><div class="test-avatar">A</div><div><div class="test-name">Ana Beatriz Costa</div><div class="test-detail">Casou em junho de 2026 · Casamento p/ 180 pessoas · São Paulo, SP</div></div></div>
-      </div>
-      <div class="test-card anim">
-        <div class="stars">★★★★★</div>
-        <p>"A biblioteca de documentos é incrível! O roteiro para visita ao buffet me fez perguntas que eu jamais teria pensado. Me sinto muito mais segura agora."</p>
-        <div class="test-author"><div class="test-avatar">C</div><div><div class="test-name">Camila Rodrigues</div><div class="test-detail">Casou em março de 2026 · Casamento p/ 120 pessoas · Belo Horizonte, MG</div></div></div>
+        <p>"Eu e meu noivo começamos a usar o Planner Santa Data recentemente e estamos amando! Achamos muito prático. Meu noivo amou por ter tudo concentrado num só lugar, o que facilita as prioridades de modo ilustrado. Eu amei a parte de organizar o quantitativo dos fornecedores, porque facilita muito a nossa vida na lista do buffet. Melhor do que várias planilhas diferentes do Google e do Excel!"</p>
+        <div class="test-author"><div class="test-avatar">💬</div><div><div class="test-name">Noiva via WhatsApp</div><div class="test-detail">Mensagem real recebida · verificado ✓</div></div></div>
       </div>
       <div class="test-card anim">
         <div class="stars">★★★★★</div>
-        <p>"Meu noivo ficou impressionado com a organização. A página de contratos no Google Drive foi um diferencial enorme — tudo num lugar só, sem stress."</p>
-        <div class="test-author"><div class="test-avatar">J</div><div><div class="test-name">Juliana Ferreira</div><div class="test-detail">Casou em janeiro de 2026 · Casamento p/ 200 pessoas · Fortaleza, CE</div></div></div>
-      </div>
-    </div>
-    <!-- Print de DM simulado -->
-    <div class="dm-block anim">
-      <div class="dm-header">
-        <span class="dm-icon">💬</span>
-        <span class="dm-label">Mensagens reais de noivas</span>
-      </div>
-      <div class="dm-messages">
-        <div class="dm-msg">
-          <div class="dm-avatar">M</div>
-          <div class="dm-bubble">"Gente, comprei o Santa Data ontem e já organizei tudo que estava espalhado em 5 grupos de WhatsApp diferentes 😭 por que não existia isso antes??"</div>
-        </div>
-        <div class="dm-msg">
-          <div class="dm-avatar">R</div>
-          <div class="dm-bubble">"O controle financeiro salvou minha vida. Eu nem sabia que já tinha comprometido 80% do orçamento com os primeiros fornecedores 🥲"</div>
-        </div>
-        <div class="dm-msg">
-          <div class="dm-avatar">L</div>
-          <div class="dm-bubble">"Recomendo demais! Minha cerimonialista adorou quando mandei o PDF do cortejo. Falou que foi a noiva mais organizada que já atendeu ❤️"</div>
-        </div>
+        <p>"Passando só pra dizer que eu amei muito esse planner! Tem me ajudado demais a organizar tudo para o meu casamento civil e religioso, até coisas que eu nem sabia que precisava pensar em organizar. Sem dúvidas o Planner Santa Data foi a melhor descoberta que eu tive e o melhor investimento que fiz para essa fase!"</p>
+        <div class="test-author"><div class="test-avatar">💬</div><div><div class="test-name">Noiva via WhatsApp</div><div class="test-detail">Mensagem real recebida · verificado ✓</div></div></div>
       </div>
     </div>
   </div>
@@ -963,6 +986,7 @@ footer a{color:var(--coral);text-decoration:none;}
     <p class="section-sub">Junte-se a centenas de noivas que já estão planejando o casamento dos sonhos com leveza, organização e amor.</p>
     <a href="#preco" class="btn-primary" style="font-size:15px;padding:20px 50px;">✦ Garantir agora por R$ 297,90 — tempo limitado</a>
     <p style="color:var(--soft);font-size:12px;margin-top:20px;letter-spacing:1px;">🔒 Pagamento seguro · 7 dias de garantia · Acesso imediato</p>
+    <p style="color:var(--taupe);font-size:13px;margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;">Junte-se às 500+ noivas que já planejam com leveza ❤️</p>
   </div>
 </section>
 
